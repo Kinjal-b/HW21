@@ -79,3 +79,49 @@ Translating text from one language to another.
 Determining the sentiment expressed in a piece of text.        
 
 Overall, Neural Language Models have revolutionized the field of NLP by providing tools that understand and generate human-like text, leveraging deep learning technologies to capture complex language patterns more effectively than ever before.
+
+### Q4. What is a bias? In word embedding and how to do debiasing?       
+
+### Answer:       
+
+#### What is Bias in Word Embeddings?          
+
+Bias in word embeddings refers to systematic, often prejudicial associations learned by the models from the training data. This data, typically large corpora of human-generated text, may reflect societal biases related to gender, race, ethnicity, or other factors. For example, traditional gender stereotypes might be seen in embeddings where words like "nurse" or "secretary" are more closely associated with female pronouns than male ones, while "engineer" or "pilot" might be closer to male pronouns.
+
+These biases in word embeddings can lead to discriminatory or biased outcomes in downstream NLP applications, such as hiring tools, search engines, or chatbots, thereby perpetuating and even amplifying existing social biases.
+
+#### How to Debias Word Embeddings        
+
+Debiasing word embeddings involves methods to reduce or eliminate biased representations. Several approaches have been developed:
+
+1. Bias Identification:         
+The first step is identifying the bias vectors in the embeddings. One common technique involves isolating the direction corresponding to a specific bias (e.g., gender) in the vector space. This can be done by analyzing differences in vectors between stereotypically paired words (like "man" - "woman", "brother" - "sister").         
+
+2. Neutralization and Equalization:         
+
+Neutralization:           
+This involves adjusting word vectors so that neutral words are made orthogonal to the bias direction. For example, words such as "nurse" or "engineer" are adjusted to be gender-neutral by removing their projections on the gender vector.     
+
+Equalization:            
+Ensuring that specific sets of words are equidistant to contrasting words. For instance, ensuring "grandmother" and "grandfather" are both equally distant to "family" and similar terms.          
+
+3. Counterfactual Data Augmentation:            
+Generating synthetic training data where terms with potential biases are swapped with their counterparts, such as changing "he is a nurse" to "she is a nurse" and vice versa in training datasets to help the model learn unbiased representations.         
+
+4. Constraint-Based Training:           
+Modifying the training objective of the embedding model to include constraints that minimize bias. This could involve adding regularization terms that penalize the model for learning biased representations.          
+
+5. Post-Processing Adjustments:           
+Applying modifications to pre-trained word embeddings before they are used in applications. This can involve techniques like the aforementioned neutralization and equalization, applied after the model has been trained.           
+
+6. Bias-Aware Model Architecture:            
+Designing NLP models and algorithms that are inherently less likely to amplify biases. This might include attention mechanisms that can learn to ignore biased aspects of the data.          
+
+#### Importance of Debiasing          
+
+Debiasing is crucial for building fair, ethical, and socially responsible AI systems. By actively addressing and reducing bias in word embeddings, developers can help ensure that AI technologies do not reinforce undesirable stereotypes and offer equal performance across diverse demographic groups. However, complete debiasing is challenging and an area of active research, emphasizing the need for continuous improvement and vigilance in deploying NLP models.
+
+### Q5. How does modern machine translation work using the language model?      
+
+### Answer:         
+
