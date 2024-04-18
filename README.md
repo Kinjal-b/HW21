@@ -34,7 +34,48 @@ Jaccard Similarity: Although less common in the context of word embeddings, Jacc
 
 Among these, cosine similarity is preferred for word embeddings because it effectively captures the orientation of vectors and is less affected by the magnitude of the vectors. This makes it particularly suitable for comparing words based on their directional closeness in the embedding space, reflecting their semantic similarity.       
 
-### Describe the Neural Language Model.      
+### Q3. Describe the Neural Language Model.      
 
 ### Answer:      
 
+A Neural Language Model (NLM) is a type of language model that utilizes neural networks to predict the likelihood of a sequence of words. These models represent a significant advancement over traditional statistical language models, such as n-gram models, primarily because they can capture longer dependencies and manage larger contexts effectively.     
+
+#### Key Features of Neural Language Models:     
+
+1. Word Embeddings:       
+At the core of NLMs are word embeddings, which transform words into dense vector representations. These embeddings capture semantic meanings and are learned during the training process.      
+
+2. Handling of Context:       
+Unlike n-gram models that explicitly count words and their frequencies within a fixed window, NLMs learn to predict words based on a dynamically learned context, capturing more nuanced language patterns.      
+
+3. Model Architectures:         
+
+There are several types of neural network architectures used in NLMs:            
+
+Recurrent Neural Networks (RNNs):       
+Designed to handle sequences of data, RNNs process words one at a time while maintaining a 'memory' (hidden state) of what has been processed so far. This allows them to manage dependencies between words in a sentence.      
+
+Long Short-Term Memory Networks (LSTMs) and Gated Recurrent Units (GRUs):       
+These are specialized RNNs that have mechanisms to learn dependencies over longer distances, making them effective for language modeling.      
+
+Transformers:       
+A newer architecture that uses self-attention mechanisms to weigh the influence of different words, regardless of their position in the input sequence. This architecture has become the basis for models like BERT and GPT, significantly enhancing the capabilities of language models.      
+
+#### Training Process:          
+
+Neural Language Models are typically trained on large corpora of text. During training, the model is presented with sequences of words and learns to predict the next word in the sequence. This is done by adjusting the model weights to minimize the prediction error, often using backpropagation and optimization techniques like stochastic gradient descent.      
+
+#### Applications:        
+
+Neural Language Models are used in a wide range of NLP tasks, including:      
+
+1. Text Generation:       
+Generating coherent and contextually relevant text based on a prompt.
+2. Speech Recognition:         
+Transforming spoken language into text by predicting sequences of words.
+3. Machine Translation:          
+Translating text from one language to another.
+4. Sentiment Analysis:           
+Determining the sentiment expressed in a piece of text.        
+
+Overall, Neural Language Models have revolutionized the field of NLP by providing tools that understand and generate human-like text, leveraging deep learning technologies to capture complex language patterns more effectively than ever before.
